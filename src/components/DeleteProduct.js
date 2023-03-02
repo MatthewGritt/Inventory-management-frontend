@@ -23,7 +23,10 @@ const DeleteProduct = ({ show, setShow, id, setProducts, token, perm }) => {
               };
               const deleteProduct = async () => {
                 try {
-                  const res = await fetch("/items", options);
+                  const res = await fetch(
+                    `${process.env.REACT_APP_API}/items`,
+                    options,
+                  );
                   const data = await res.json();
                   if (!res.ok) {
                     alert(data.message);

@@ -27,7 +27,7 @@ const App = () => {
           token,
         },
       };
-      fetch("/auth", options).then((res) =>
+      fetch(`${process.env.REACT_APP_API}/auth`, options).then((res) =>
         res.json().then((data) => setUser(data)),
       );
     }
@@ -71,6 +71,7 @@ const App = () => {
       {!token && (
         <>
           <Routes>
+            <Route path="/" element={<Navigate replace to="/login" />}></Route>
             <Route path="login" element={<Login setToken={setToken} />}></Route>
             <Route path="sign-up" element={<SignUp />}></Route>
             <Route path="*" element={<Navigate replace to="/login" />}></Route>

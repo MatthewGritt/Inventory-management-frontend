@@ -34,7 +34,10 @@ const Users = ({ user, token }) => {
                       body: JSON.stringify({ search }),
                     };
                     const getSearch = async () => {
-                      const res = await fetch("/search", options);
+                      const res = await fetch(
+                        `${process.env.REACT_APP_API}/search`,
+                        options,
+                      );
                       const data = await res.json();
                       if (res.ok) {
                         setResult(data);
@@ -78,7 +81,10 @@ const Users = ({ user, token }) => {
                       }),
                     };
                     const getSearch = async () => {
-                      const res = await fetch("/search", options);
+                      const res = await fetch(
+                        `${process.env.REACT_APP_API}/search`,
+                        options,
+                      );
                       const data = await res.json();
                       if (res.ok) {
                         alert("permissions updated");

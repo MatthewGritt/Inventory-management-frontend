@@ -40,7 +40,7 @@ const Dashboard = ({ token, perm }) => {
           token,
         },
       };
-      const res = await fetch("/items", options);
+      const res = await fetch(`${process.env.REACT_APP_API}/items`, options);
       const data = await res.json();
       setProducts(data);
     };

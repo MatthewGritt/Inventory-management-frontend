@@ -102,7 +102,10 @@ const EditProduct = ({ token, perm }) => {
               };
               const editData = async () => {
                 try {
-                  const res = await fetch("/edit-product", options);
+                  const res = await fetch(
+                    `${process.env.REACT_APP_API}/edit-product`,
+                    options,
+                  );
                   const data = await res.json();
                   if (!res.ok) {
                     alert(data.message);

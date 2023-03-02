@@ -20,7 +20,7 @@ const validate = (user, pwd, navigate, setToken) => {
   };
   const loggingIn = async () => {
     try {
-      const res = await fetch("/login", options);
+      const res = await fetch(`${process.env.REACT_APP_API}/login`, options);
       const data = await res.json();
       if (data.message) alert(data.message);
       else {

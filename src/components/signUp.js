@@ -18,7 +18,7 @@ const makeAccount = (user, pwd, navigate) => {
 
   const signingUp = async () => {
     try {
-      const res = await fetch("/sign-up", options);
+      const res = await fetch(`${process.env.REACT_APP_API}/sign-up`, options);
       const data = await res.json();
       alert(data.message);
       if (res.ok) navigate("/login");

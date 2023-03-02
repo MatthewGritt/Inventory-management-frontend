@@ -101,7 +101,10 @@ const NewProduct = ({ token, perm }) => {
               };
               const postData = async () => {
                 try {
-                  const res = await fetch("/add-product", options);
+                  const res = await fetch(
+                    `${process.env.REACT_APP_API}/add-product`,
+                    options,
+                  );
                   const data = await res.json();
                   if (!res.ok) {
                     alert(data.message);
