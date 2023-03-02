@@ -71,10 +71,7 @@ const App = () => {
       {!token && (
         <>
           <Routes>
-            <Route
-              path="/index.html"
-              element={<Navigate to="/login" />}
-            ></Route>
+            <Route path="/" element={<Navigate to="/login" />}></Route>
             <Route
               path="/login"
               element={<Login setToken={setToken} />}
