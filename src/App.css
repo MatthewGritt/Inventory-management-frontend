@@ -1,0 +1,390 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+:root {
+  --border-gray: rgb(193, 192, 192);
+}
+
+a {
+  text-decoration: 0;
+  color: black;
+}
+
+/* NAV */
+nav {
+  min-width: 250px;
+  background: white;
+}
+
+.routes {
+  background: #eee;
+  width: 100%;
+  padding: 0 20px;
+  min-width: 960px;
+}
+
+/* centering divs */
+.role,
+.nav-option,
+.stats-items div,
+.next-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role {
+  height: 80px;
+  background: black;
+  color: white;
+}
+
+.nav-option {
+  height: 70px;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.nav-option:hover {
+  background: lightblue;
+  cursor: pointer;
+}
+
+/* DASHBOARD */
+.dashboard {
+  background: #eee;
+  width: 100%;
+}
+
+/* welcome section */
+.welcome {
+  color: rgb(131, 131, 131);
+  border-bottom: 1px solid var(--border-gray);
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.welcome span,
+.welcome2 span {
+  color: darkorange;
+}
+
+.welcome button {
+  background: darkorange;
+  color: white;
+  border-radius: 5px;
+  width: 70px;
+  border-color: rgb(125, 91, 5);
+  font-weight: bold;
+}
+
+.welcome button:hover,
+.edit:hover,
+.delete:hover,
+.dashboard-stock button:hover,
+.delete-buttons button:hover,
+.page button:hover,
+.login button:hover,
+.found-user button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* stats section */
+.stats {
+  height: 155px;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.stats h2 {
+  margin: 5px 0 10px 0;
+}
+
+.stats-items {
+  display: flex;
+  gap: 10px;
+}
+
+.stats-items div {
+  background: pink;
+  height: 100px;
+  width: 300px;
+  border: 1px solid black;
+  flex-direction: column;
+  flex-direction: column;
+  color: white;
+}
+
+/* inventory section */
+.dashboard-stock {
+  display: flex;
+  margin: 10px 0 15px 0;
+}
+
+.dashboard-stock button {
+  margin-left: 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.loading,
+.not-admin,
+.not-found {
+  font-size: 30px;
+  padding: 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  border-bottom: 2px solid blue !important;
+  border-top: 2px solid blue !important;
+  height: 35px;
+}
+
+tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+th {
+  width: 120px;
+  text-align: start;
+}
+
+td {
+  width: 120px;
+  font-size: 14px;
+  cursor: pointer;
+}
+td:hover {
+  text-decoration: underline;
+}
+
+.e-d {
+  cursor: auto;
+}
+.e-d:hover {
+  text-decoration: none;
+}
+
+tbody {
+  height: 360px;
+}
+
+tbody tr {
+  height: 60px;
+}
+
+tbody tr:nth-child(even) {
+  background: white;
+}
+
+tbody td:nth-child(1) {
+  padding-left: 10px;
+}
+thead th:nth-child(1) {
+  padding-left: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+}
+
+.buttons button {
+  margin: 1.5px 0;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.next-page {
+  display: flex;
+  height: 80px;
+}
+
+.pages button {
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.prev,
+.next {
+  height: 30px;
+  padding: 0 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.prev {
+  margin-right: 5px;
+}
+
+.next {
+  margin-left: 5px;
+}
+
+.prev:hover,
+.next:hover,
+.pages button:hover {
+  background: gray !important;
+  cursor: pointer !important;
+}
+
+/* DELETE SECTION */
+.delete-section {
+  position: absolute;
+  height: 791px;
+  min-width: 100%;
+  width: 1210px;
+  opacity: 0.7;
+  background: gray;
+  inset: 0;
+}
+
+.delete-product {
+  position: absolute;
+  background: white;
+  padding: 10px;
+  opacity: 1;
+  z-index: 3;
+  inset: 0;
+  height: 200px;
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.delete-product h2 {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.delete-buttons {
+  margin-top: 20px;
+}
+.delete-buttons button {
+  background: black;
+  color: white;
+  font-weight: 600;
+  margin: 0 10px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 80px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}
+
+/* INVENTORY ITEM STYLES */
+.container {
+  width: 100%;
+  height: 87%;
+  padding-bottom: 10px;
+}
+
+.inventory-item,
+.page {
+  margin-top: 10px;
+  padding: 10px;
+  background: white;
+  width: 600px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  min-height: 100%;
+}
+
+.inventory-item h2 {
+  border-bottom: 1px solid var(--border-gray);
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+.in-stock {
+  color: rgb(105, 207, 105);
+}
+.out-of-stock {
+  color: red;
+}
+
+.inventory-item h3 {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.inventory-item h3 span {
+  color: rgb(90, 90, 90);
+  font-weight: 400;
+  margin: 0 5px;
+}
+
+.desc {
+  border-top: 1px solid var(--border-gray);
+}
+
+.desc p {
+  color: rgb(90, 90, 90);
+}
+
+/* ADD PRODUCT SECTION */
+.page div {
+  display: flex;
+  flex-direction: column;
+}
+
+.page h2 {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.page label {
+  margin: 10px 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.page input {
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.page textarea {
+  height: 200px;
+  padding: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+}
+
+.page button {
+  text-align: center;
+  background: green;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  width: 120px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
