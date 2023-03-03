@@ -20,10 +20,11 @@ const App = () => {
 
   // check if connected to database
   useEffect(() => {
+    console.log("i ran");
     fetch(`${process.env.REACT_APP_API}/connect`)
       .then((res) => res.json())
       .then((data) => setConnected(data));
-  }, [connected]);
+  }, []);
 
   useEffect(() => {
     if (token) {
