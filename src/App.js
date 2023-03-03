@@ -23,7 +23,7 @@ const App = () => {
     fetch(`${process.env.REACT_APP_API}/connect`)
       .then((res) => res.json())
       .then((data) => setConnected(data));
-  }, []);
+  }, [connected]);
 
   useEffect(() => {
     if (token) {
