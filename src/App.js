@@ -15,9 +15,16 @@ import NotFound from "./components/NotFound";
 const App = () => {
   const [token, setToken] = useState(Cookies.get("jwtToken"));
   const [user, setUser] = useState(null);
+  const [connected, setConnected] = useState(null);
   const navigate = useNavigate();
 
-  // fetches the user that logged in
+  // check if connected to database
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API}/connect`)
+      .then((res) => res.json())
+      .then((data) => setConnected(data));
+  }, []);
+
   useEffect(() => {
     if (token) {
       const options = {
@@ -32,10 +39,9 @@ const App = () => {
       );
     }
   }, [token]);
-
   return (
     <div className="app">
-      {token && (
+      {token && connected && (
         <>
           <Nav role={user && user[0].role} />
           <div className="routes">
@@ -68,7 +74,7 @@ const App = () => {
         </>
       )}
       {/* login routes */}
-      {!token && (
+      {!token && connected && (
         <>
           <Routes>
             <Route path="/" element={<Navigate to="/login" />}></Route>
@@ -81,6 +87,7 @@ const App = () => {
           </Routes>
         </>
       )}
+      {!connected && <div className="connecting">Loading...</div>}
     </div>
   );
 };
