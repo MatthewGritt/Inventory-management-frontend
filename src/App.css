@@ -13,11 +13,20 @@ a {
 }
 
 .connecting {
-  font-size: 50px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 50px;
+}
+
+.connecting h1 {
+  font-size: 55px;
+}
+
+.connecting p {
+  font-size: 22px;
+  margin-top: 5px;
 }
 
 /* NAV */

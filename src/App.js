@@ -87,7 +87,12 @@ const App = () => {
           </Routes>
         </>
       )}
-      {!connected && <div className="connecting">Loading...</div>}
+      {!connected && (
+        <div className="connecting">
+          <h1>Loading Server...</h1>
+          <p>average wait time 30 seconds</p>
+        </div>
+      )}
     </div>
   );
 };
