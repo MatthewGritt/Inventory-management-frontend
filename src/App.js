@@ -19,11 +19,11 @@ const App = () => {
   const navigate = useNavigate();
 
   // check if connected to database
-  // useEffect(() => {
-  //   fetch(`${process.env.REACT_APP_API}/connect`)
-  //     .then((res) => res.json())
-  //     .then((data) => setConnected(data));
-  // }, []);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API}/connect`)
+      .then((res) => res.json())
+      .then((data) => setConnected(data));
+  }, []);
 
   useEffect(() => {
     if (token) {
