@@ -19,11 +19,11 @@ const App = () => {
   const navigate = useNavigate();
 
   // check if connected to database
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/connect`)
-      .then((res) => res.json())
-      .then((data) => setConnected(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${process.env.REACT_APP_API}/connect`)
+  //     .then((res) => res.json())
+  //     .then((data) => setConnected(data));
+  // }, []);
 
   useEffect(() => {
     if (token) {
@@ -90,7 +90,7 @@ const App = () => {
       {!connected && (
         <div className="connecting">
           <h1>Loading Server...</h1>
-          <p>average wait time 30 seconds</p>
+          <p>average wait time 30-40 seconds</p>
         </div>
       )}
     </div>
